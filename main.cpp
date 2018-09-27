@@ -16,6 +16,7 @@ int main()
  	l1.DeleteAtPos(2);
 
 	l1.PrintAll();
+	cout<<"-----\n";
 	l2.PrintAll();
 
 	return 0;

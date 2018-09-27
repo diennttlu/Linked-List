@@ -12,7 +12,6 @@ public:
 	{
 		head = 0;
 	};
-
 	List(List<T> l, int from, int to)
 	{
 		head = 0;
@@ -25,6 +24,17 @@ public:
 			p=p->next;
 		}
 	};
+	List(const List<T> &l)
+	{
+		head = 0;
+		Node<T> *p = l.head;
+		while(p!=0)
+		{
+			PushBack(p->data);
+			p = p->next;
+		}
+	};
+
 	void PushBack(T value)
 	{
 		Node <T> *n = new Node<T>;
@@ -206,6 +216,18 @@ public:
 			delete q;
 
 		}
+	};
+	
+	List<T> operator = ( const List<T> &l)
+	{
+		head = 0;
+		Node<T> *p = l.head;
+		while(p!=0)
+		{
+			PushBack(p->data);
+			p = p->next;
+		}
+		return *this;
 	};
 }; 
 #endif
